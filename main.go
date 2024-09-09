@@ -23,8 +23,6 @@ func main() {
 		fmt.Println("i =", 100/i)
 	}
 
-	//현재 컨테이너 IP 를 출력하라.
-	ip := os.Getenv("MY_POD_IP")
 
 	//현재 컨테이너의 hostname 을 출력하라.
 	hostname, _ := os.Hostname()
@@ -32,7 +30,7 @@ func main() {
 	r := gin.Default()
 	r.GET("", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"my pod ip": ip,
+			"message":   "Hello, Container!",
 			"hostname":  hostname,
 			"env":       os.Environ(),
 		})
