@@ -30,7 +30,7 @@ func main() {
 	hostname, _ := os.Hostname()
 
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
+	r.GET("", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"my pod ip": ip,
 			"hostname":  hostname,
